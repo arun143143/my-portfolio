@@ -2,7 +2,8 @@
 export default {
   content: [
     "./index.html",
-    "./**/*.{js,ts,jsx,tsx}",
+    "./App.tsx",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -11,8 +12,13 @@ export default {
       },
       animation: {
         gradient: 'gradient 8s linear infinite',
+        fadeIn: 'fadeIn 0.3s ease-in',
       },
       keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         gradient: {
           '0%, 100%': {
             'background-size': '200% 200%',

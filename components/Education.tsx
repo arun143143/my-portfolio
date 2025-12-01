@@ -54,8 +54,7 @@ const Education: React.FC = () => {
                 </div>
                 <h4 className="text-lg font-bold text-white">{edu.degree}</h4>
                 <p className="text-gray-400 text-sm mt-1">{edu.institution}</p>
-                <div className="flex justify-between items-center mt-4 text-sm">
-                  <span className="text-green-400 font-medium">{edu.grade}</span>
+                <div className="mt-4 text-sm">
                   <span className="text-gray-500">{edu.period}</span>
                 </div>
               </motion.div>
