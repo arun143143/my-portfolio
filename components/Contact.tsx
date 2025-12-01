@@ -151,9 +151,9 @@ const Contact: React.FC = () => {
               className="absolute inset-0 bg-[#0f0f13] z-20 flex flex-col items-center justify-center text-center p-8"
              >
                <motion.div 
-                initial={{ scale: 0, rotate: -180 }} 
-                animate={{ scale: 1, rotate: 0 }} 
-                transition={{ type: "spring", stiffness: 200 }}
+                initial={{ scale: 0 }} 
+                animate={{ scale: 1 }} 
+                transition={{ type: "spring", stiffness: 80, damping: 12 }}
                 className="text-green-500 mb-6"
                >
                  <CheckCircle2 size={80} />
