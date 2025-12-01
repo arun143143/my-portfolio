@@ -21,9 +21,9 @@ const Contact: React.FC = () => {
 
     // Credentials provided by you. 
     // We try to read from .env first, but fallback to these hardcoded values if .env fails.
-    const serviceId = (import.meta as any).env?.VITE_EMAILJS_SERVICE_ID || "service_ms6pm79";
-    const templateId = (import.meta as any).env?.VITE_EMAILJS_TEMPLATE_ID || "template_contact";
-    const publicKey = (import.meta as any).env?.VITE_EMAILJS_PUBLIC_KEY || "jw1Oz58mNv37O-DvX";
+      const serviceId = (import.meta as any).env?.VITE_EMAILJS_SERVICE_ID;
+      const templateId = (import.meta as any).env?.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = (import.meta as any).env?.VITE_EMAILJS_PUBLIC_KEY;
 
     console.log("Attempting to send email with:", { serviceId, templateId, publicKey });
 
@@ -35,9 +35,7 @@ const Contact: React.FC = () => {
       return;
     }
 
-    emailjs.sendForm(serviceId, templateId, formRef.current, {
-      publicKey: publicKey,
-    })
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(
         (result) => {
           console.log('EmailJS Success:', result.text);
